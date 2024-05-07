@@ -1,6 +1,15 @@
-//your code here
-var myModal = new bootstrap.Modal(document.getElementById('newton-modal'));
+document.addEventListener("DOMContentLoaded", function() {
+  var openModalButton = document.getElementById("open-modal");
+  var modal = document.getElementById("newton-modal");
+  var closeModalButtons = document.querySelectorAll(".close-modal");
 
-  document.getElementById('open-modal').addEventListener('click', function () {
-    myModal.show();
+  openModalButton.addEventListener("click", function() {
+    modal.style.display = "block";
   });
+
+  closeModalButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+  });
+});
