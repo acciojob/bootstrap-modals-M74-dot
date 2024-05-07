@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     closeModalButtons.forEach(function(button) {
         button.addEventListener("click", function() {
-            modal.style.display = "none";
+            var myModal = new bootstrap.Modal(modal);
+            myModal.hide(); // Use Bootstrap's hide() method to properly close the modal
         });
     });
 });
